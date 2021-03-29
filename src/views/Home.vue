@@ -6,6 +6,7 @@
      <Todo @getChildText="showChildText"></Todo>
      <p v-for="(item,index) in textList" :key="index" class="todolist">{{item}}
        <button @click="deleteTodo(item)" class="delete">削除</button>
+       <button @reload="reloadTodo(item)" class="reload">更新</button>
      </p>
    </div>
  </div>
@@ -57,16 +58,22 @@ export default {
 }
 .todolist {
   color: black;
-  width: 30%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid gray;
   font-size: 14px;
-  outline: none;
 }
 .delete {
   color: greenyellow;
   border: solid greenyellow;
+  background-color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+.reload {
+  color: orange;
+  border: solid orange;
   background-color: white;
   font-size: 12px;
   font-weight: bold;
